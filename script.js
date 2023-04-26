@@ -53,8 +53,12 @@ function intentar(){
 function leerIntento() {
   let intento = document.getElementById("guess-input")
   intento = intento.value;
-  intento = intento.toUpperCase()
-  return intento
+  if (intento.length == 5) {
+    intento = intento.toUpperCase()
+    return intento
+  } else {
+    terminar('<h1>Debe ingresar una palabra de 5 letras</h1>')
+  }
 }
 
 // DESHABILITA CONTROLES DEL JUEGO
@@ -71,4 +75,5 @@ function terminar(mensaje){
     location.reload();
 })
 }
+
 
